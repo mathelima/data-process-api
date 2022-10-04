@@ -28,6 +28,8 @@
         <li><a href="#installation-with-docker">Installation with docker</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#testing">Testing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -141,6 +143,10 @@ To upload a file to be processed by the API, use the method POST on http://local
 
 ![image](https://user-images.githubusercontent.com/32756259/193642927-6359f8d2-b0c2-45bf-8ee7-867f2ca9e87a.png)
 
+The file data.csv is an exemple of input.
+
+![image](https://user-images.githubusercontent.com/32756259/193712599-9fb6b907-6f6f-40c0-8391-7b6121d6fb17.png)
+
 The response should be the task_id of the process.
 
 ![image](https://user-images.githubusercontent.com/32756259/193643077-31d59076-d921-4335-95bb-65ffcdfddd61.png)
@@ -151,18 +157,30 @@ To get the processed file, use the method GET on http://localhost:8000/plays/{id
 
 ![image](https://user-images.githubusercontent.com/32756259/193643220-39342eb3-e4bf-464e-98a7-290750139d6d.png)
 
-The response should be the csv file processed
+The response should be the csv file processed.
 
 ![image](https://user-images.githubusercontent.com/32756259/193643363-7f0bac59-0cad-49cb-857d-31768eacb8f8.png)
 
-To download the file, you should use the option Send and download
+To download the file, you should use the option Send and Download.
 
 ![image](https://user-images.githubusercontent.com/32756259/193643717-c2417ca6-2c00-4fb3-87ad-d365d66b5569.png)
 
+In case of large files, the file downloaded will not be an .csv, but is possible to just change the extension to .csv.
 
 
 
 _For more information, please look at the [Swagger](http://localhost:8000/docs)_
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- TESTING -->
+## Testing
+
+Run the tests using pytest:
+
+   ```sh
+   pytest
+   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
