@@ -24,8 +24,11 @@ def save_upload_file_tmp(upload_file: UploadFile) -> Path:
 
 def process_chunk_csv(file: UploadFile, task_id: uuid, tasks: list):
     """Function to process the csv uploaded using dask.
+    Dask is a python library that uses pandas but with parallelism and scalability.
+    It utilizes multiple CPU cores by internally chunking dataframe and process in parallel.
+    Instead of computing first, Dask create a graph of tasks, allowing to store data larger than the memory.
     The groupby complexity is O(n) since the data is scanned per-row and aggregated in one pass.
-    The gap of the function is on the exportation to csv, consuming the most time."""
+    The gap of this function is on the exportation to csv, consuming the most time."""
     try:
         logger.debug(f"Starting task id {task_id}.")
         s_time = time.time()
